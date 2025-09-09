@@ -1,0 +1,41 @@
+Q40: Write a program to find the 1’s complement of a binary number and print it.
+
+/*
+Sample Test Cases:
+Input 1:
+1010
+Output 1:
+0101
+
+Input 2:
+1111
+Output 2:
+0000
+
+*/
+def ones_complement(binary_number_str):
+    """
+    Calculates the 1's complement of a binary number represented as a string.
+
+    Args:
+        binary_number_str: A string representing the binary number (e.g., "10110").
+
+    Returns:
+        A string representing the 1's complement, or an error message if the input is invalid.
+    """
+    complement = ""
+    for bit in binary_number_str:
+        if bit == '0':
+            complement += '1'
+        elif bit == '1':
+            complement += '0'
+        else:
+            return "Error: Invalid binary input. Please enter only '0's and '1's."
+    return complement
+
+# Get input from the user
+binary_input = input("Enter a binary number: ")
+
+# Calculate and print the 1's complement
+result = ones_complement(binary_input)
+print(f"The 1's complement is: {result}")
